@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City OS | The Brain of a Sustainable Future</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="glow-overlay"></div>
+    <div class="cursor-glow"></div>
+
+    <!-- Navigation Header -->
+    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.5rem 0; background: rgba(10, 15, 28, 0.8); backdrop-filter: blur(10px);">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="logo" style="font-weight: 700; font-size: 1.2rem; color: #fff;">
+                <i class="fas fa-microchip" style="color: var(--primary); margin-right: 8px;"></i> SMART<span style="color: var(--primary);">CITY</span>OS
+            </div>
+            <div id="system-status" class="text-muted" style="font-size: 0.8rem; letter-spacing: 1px;">
+                <span style="color: var(--success);">●</span> SYSTEM ONLINE | VER 2.0.35
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots">
+        <div class="dot active" data-page="1" title="Landing"></div>
+        <div class="dot" data-page="2" title="Input"></div>
+        <div class="dot" data-page="3" title="Analysis"></div>
+        <div class="dot" data-page="4" title="Pulse"></div>
+        <div class="dot" data-page="5" title="Recommendations"></div>
+        <div class="dot" data-page="6" title="Predictions"></div>
+        <div class="dot" data-page="7" title="EcoScore"></div>
+        <div class="dot" data-page="8" title="Impact"></div>
+        <div class="dot" data-page="9" title="Summary"></div>
+    </div>
+
+    <main class="container">
+        <!-- PAGE 1: LANDING -->
+        <section id="page-1" class="page-section active" style="text-align: center; padding-top: 10rem;">
+            <h1 class="text-gradient" style="font-size: 4.5rem; margin-bottom: 1rem;">Smart City OS</h1>
+            <p class="text-muted" style="font-size: 1.4rem; margin-bottom: 3rem;">Design, Analyze & Improve the Cities of Tomorrow</p>
+            <div class="glass-card" style="max-width: 600px; margin: 0 auto 3rem; border: 1px dashed var(--glass-border);">
+                <p style="font-size: 0.9rem; font-style: italic;">"The future belongs to cities that think, adapt, and sustain. Initialize your city simulation to begin the transition."</p>
+            </div>
+            <button class="btn btn-primary" onclick="navigateTo(2)">
+                Launch System <i class="fas fa-power-off"></i>
+            </button>
+        </section>
+
+        <!-- PAGE 2: DATA INPUT MODULE -->
+        <section id="page-2" class="page-section">
+            <h2 class="text-gradient">City Data Input Module</h2>
+            <p class="text-muted">Analyzing realistic urban scenarios and behavioral patterns.</p>
+            
+            <div class="input-grid">
+                <!-- Section A: Energy -->
+                <div class="glass-card input-card">
+                    <h3 style="color: var(--primary); margin-bottom: 1.5rem;"><i class="fas fa-bolt"></i> Energy Patterns</h3>
+                    <div class="question-group">
+                        <label>Household Electricity Consumption</label>
+                        <select class="option-select" id="energy-cons">
+                            <option value="20">Low (Optimized)</option>
+                            <option value="10">Medium (Standard)</option>
+                            <option value="0">High (Wastage detected)</option>
+                        </select>
+                    </div>
+                    <div class="question-group">
+                        <label>Energy-Efficient Appliance Adoption</label>
+                        <select class="option-select" id="energy-eff">
+                            <option value="20">> 75% Buildings</option>
+                            <option value="10">25% - 75% Buildings</option>
+                            <option value="0">< 25% Buildings</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section B: Transport -->
+                <div class="glass-card input-card">
+                    <h3 style="color: var(--secondary); margin-bottom: 1.5rem;"><i class="fas fa-bus"></i> Transport Behavior</h3>
+                    <div class="question-group">
+                        <label>Daily Commute Peak Congestion</label>
+                        <select class="option-select" id="trans-cong">
+                            <option value="20">Low / Fluid</option>
+                            <option value="10">Moderate / Slow</option>
+                            <option value="0">High / Gridlock</option>
+                        </select>
+                    </div>
+                    <div class="question-group">
+                        <label>Street Walkability Index</label>
+                        <select class="option-select" id="trans-walk">
+                            <option value="20">Good (Pedestrian Priority)</option>
+                            <option value="10">Moderate (Dual Use)</option>
+                            <option value="0">Poor (Vehicle Centric)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section C: Waste -->
+                <div class="glass-card input-card">
+                    <h3 style="color: var(--success); margin-bottom: 1.5rem;"><i class="fas fa-recycle"></i> Waste Management</h3>
+                    <div class="question-group">
+                        <label>Waste Segregation at Source</label>
+                        <select class="option-select" id="waste-seg">
+                            <option value="20">> 80% Households</option>
+                            <option value="10">40% - 80% Households</option>
+                            <option value="0">< 40% Households</option>
+                        </select>
+                    </div>
+                    <div class="question-group">
+                        <label>Visible Waste in Public Areas</label>
+                        <select class="option-select" id="waste-pub">
+                            <option value="20">Negligible</option>
+                            <option value="10">Occasional / Moderate</option>
+                            <option value="0">High / Overflowing</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section D: Water -->
+                <div class="glass-card input-card">
+                    <h3 style="color: #60a5fa; margin-bottom: 1.5rem;"><i class="fas fa-droplet"></i> Water Usage</h3>
+                    <div class="question-group">
+                        <label>Rainwater Harvesting Adoption</label>
+                        <select class="option-select" id="water-rain">
+                            <option value="20">Mandatory / Widespread</option>
+                            <option value="10">Moderate / Growing</option>
+                            <option value="0">Low / Non-existent</option>
+                        </select>
+                    </div>
+                    <div class="question-group">
+                        <label>Leakage or Distribution Wastage</label>
+                        <select class="option-select" id="water-leak">
+                            <option value="20">< 5% Loss</option>
+                            <option value="10">5% - 20% Loss</option>
+                            <option value="0">> 20% Critical Loss</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Section E: Lifestyle -->
+                <div class="glass-card input-card" style="grid-column: span 2;">
+                    <h3 style="color: var(--accent); margin-bottom: 1.5rem;"><i class="fas fa-leaf"></i> Citizen Lifestyle</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="question-group">
+                            <label>Plastic Usage Frequency</label>
+                            <select class="option-select" id="life-plastic">
+                                <option value="20">Rarely / Banned</option>
+                                <option value="10">Sometimes</option>
+                                <option value="0">Daily / High</option>
+                            </select>
+                        </div>
+                        <div class="question-group">
+                            <label>Community Participation</label>
+                            <select class="option-select" id="life-comm">
+                                <option value="20">Active Involvement</option>
+                                <option value="10">Moderate Awareness</option>
+                                <option value="0">Low / Disengaged</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary" onclick="calculateAndNavigate()">Run Smart Analysis <i class="fas fa-brain"></i></button>
+            </div>
+        </section>
+
+        <!-- PAGE 3: SMART ANALYSIS DASHBOARD -->
+        <section id="page-3" class="page-section">
+            <h2 class="text-gradient">Analysis Dashboard</h2>
+            <p class="text-muted">Converting raw scenario data into urban intelligence.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin-top: 2rem;">
+                <div class="glass-card" style="text-align: center;">
+                    <h3 style="margin-bottom: 1.5rem;">Sustainability Score</h3>
+                    <div class="circle-container">
+                        <svg class="circle-svg" width="150" height="150">
+                            <circle class="circle-bg" cx="75" cy="75" r="65"></circle>
+                            <circle id="score-circle" class="circle-progress" cx="75" cy="75" r="65" stroke-dasharray="408.4" stroke-dashoffset="408.4"></circle>
+                        </svg>
+                        <div id="main-score-text" class="circle-text">0</div>
+                    </div>
+                    <p id="score-status" style="margin-top: 1rem; font-weight: 600;"></p>
+                </div>
+
+                <div class="glass-card">
+                    <h3 style="margin-bottom: 1.5rem;">Urban Performance Metrics</h3>
+                    <div class="progress-container">
+                        <div class="progress-label"><span>Pollution Index</span><span id="poll-val">0%</span></div>
+                        <div class="progress-track"><div id="poll-bar" class="progress-fill" style="background: var(--danger);"></div></div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label"><span>Happiness Index</span><span id="happ-val">0%</span></div>
+                        <div class="progress-track"><div id="happ-bar" class="progress-fill" style="background: var(--success);"></div></div>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label"><span>Resource Efficiency</span><span id="eff-val">0%</span></div>
+                        <div class="progress-track"><div id="eff-bar" class="progress-fill" style="background: var(--secondary);"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-secondary" onclick="navigateTo(4)">Next: City Pulse <i class="fas fa-heartbeat"></i></button>
+            </div>
+        </section>
+
+        <!-- PAGE 4: CITY PULSE -->
+        <section id="page-4" class="page-section">
+            <h2 class="text-gradient">City Pulse Dashboard</h2>
+            <p class="text-muted">Real-time heat-map of urban stressors based on current data.</p>
+            
+            <div id="pulse-grid" class="dash-grid" style="margin-top: 2rem;">
+                <!-- Dynamically filled -->
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-secondary" onclick="navigateTo(5)">Recommendation Engine <i class="fas fa-lightbulb"></i></button>
+            </div>
+        </section>
+
+        <!-- PAGE 5: RECOMMENDATION ENGINE -->
+        <section id="page-5" class="page-section">
+            <h2 class="text-gradient">Smart Recommendation Engine</h2>
+            <p class="text-muted">AI-driven interventions to optimize city growth.</p>
+            
+            <div id="recom-container" style="display: grid; gap: 1.5rem; margin-top: 2rem;">
+                <!-- Dynamically filled -->
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-secondary" onclick="navigateTo(6)">View Future 2035 <i class="fas fa-forward"></i></button>
+            </div>
+        </section>
+
+        <!-- PAGE 6: FUTURE PREDICTION -->
+        <section id="page-6" class="page-section">
+            <h2 class="text-gradient">Future Prediction Panel (2035)</h2>
+            <p class="text-muted">Long-term impact projection if current trends continue.</p>
+            
+            <div class="dash-grid" style="margin-top: 2rem;">
+                <div class="glass-card">
+                    <i class="fas fa-tint-slash" style="font-size: 2rem; color: var(--danger); margin-bottom: 1rem;"></i>
+                    <h4>Water Crisis Risk</h4>
+                    <p id="predict-water" class="text-muted" style="margin-top: 10px;"></p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-smog" style="font-size: 2rem; color: var(--warning); margin-bottom: 1rem;"></i>
+                    <h4>Pollution Growth</h4>
+                    <p id="predict-poll" class="text-muted" style="margin-top: 10px;"></p>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-users-viewfinder" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                    <h4>Urban Stress</h4>
+                    <p id="predict-stress" class="text-muted" style="margin-top: 10px;"></p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-secondary" onclick="navigateTo(7)">Individual EcoScore <i class="fas fa-user-check"></i></button>
+            </div>
+        </section>
+
+        <!-- PAGE 7: ECO SCORE RESULT -->
+        <section id="page-7" class="page-section" style="text-align: center;">
+            <h2 class="text-gradient">EcoScore Analysis</h2>
+            <p class="text-muted">Evaluating your personal impact on the city ecosystem.</p>
+            
+            <div class="glass-card" style="max-width: 500px; margin: 3rem auto; padding: 3rem;">
+                <div style="font-size: 4rem; font-weight: 800; color: var(--primary);" id="eco-score-num">0</div>
+                <div id="eco-badge" class="badge" style="display: inline-block; padding: 8px 20px; border-radius: 20px; font-weight: 700; margin: 1rem 0; background: var(--primary); color: #000;">ECO HERO</div>
+                <p id="eco-msg" class="text-muted"></p>
+            </div>
+
+            <button class="btn btn-secondary" onclick="navigateTo(8)">Impact Story <i class="fas fa-book-open"></i></button>
+        </section>
+
+        <!-- PAGE 8: IMPACT STORY -->
+        <section id="page-8" class="page-section">
+            <h2 class="text-gradient" style="text-align: center;">The Impact Story</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-top: 3rem;">
+                <div class="glass-card" style="text-align: center;">
+                    <i class="fas fa-exclamation-circle" style="font-size: 3rem; color: var(--danger); margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Problem</h3>
+                    <p class="text-muted">Rapid urbanization without intelligent planning leads to resource depletion and environmental decay.</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <i class="fas fa-microchip" style="font-size: 3rem; color: var(--primary); margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Solution</h3>
+                    <p class="text-muted">Smart City OS leverages real-time data to optimize infrastructure, reduce waste, and empower citizens.</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <i class="fas fa-chart-line" style="font-size: 3rem; color: var(--success); margin-bottom: 1.5rem;"></i>
+                    <h3 style="margin-bottom: 1rem;">Impact</h3>
+                    <p class="text-muted">A sustainable future with 40% more efficiency and a 30% higher happiness index for all residents.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary" onclick="navigateTo(9)">Final Summary <i class="fas fa-flag-checkered"></i></button>
+            </div>
+        </section>
+
+        <!-- PAGE 9: FINAL SUMMARY -->
+        <section id="page-9" class="page-section" style="text-align: center;">
+            <h2 class="text-gradient">Final Simulation Summary</h2>
+            <div class="glass-card" style="max-width: 800px; margin: 3rem auto; text-align: left;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h4 style="color: var(--primary);">Overall City Score</h4>
+                        <div id="final-total-score" style="font-size: 3rem; font-weight: 800;">0/100</div>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary);">Top Improvement</h4>
+                        <p id="final-improvement" class="text-muted"></p>
+                    </div>
+                </div>
+                <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 2rem 0;">
+                <h4 style="color: var(--accent);">Future Outlook</h4>
+                <p id="final-outlook" class="text-muted"></p>
+            </div>
+
+            <button class="btn btn-primary" onclick="location.reload()">Re-simulate City <i class="fas fa-rotate"></i></button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
