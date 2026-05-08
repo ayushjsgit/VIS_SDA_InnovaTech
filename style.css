@@ -152,7 +152,7 @@ h1, h2, h3 {
     height: 10px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 5px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .progress-fill {
@@ -373,4 +373,19 @@ h1, h2, h3 {
     .input-grid { grid-template-columns: 1fr; }
     h1 { font-size: 2.5rem; }
     .nav-dots { display: none; }
+}
+
+/* FIX GRID OVERLAP */
+
+.input-grid{
+    align-items:start;
+}
+
+.input-card{
+    height:auto !important;
+}
+
+/* when dropdown opens, card grows */
+.custom-select-wrapper.open{
+    margin-bottom:220px;
 }
